@@ -24,3 +24,26 @@ import action from 'payload-action-creator';
 export const PRODUCTS_FETCHED = 'PRODUCTS_FETCHED';
 export const productsFetched = action(PRODUCTS_FETCHED);
 ```
+
+Now you can dispatch the action from a connected container in your application:
+
+```js
+import { connect } from 'react-redux';
+import { productsFetched } from './actions';
+import Component from './component';
+
+const mapDispatchToProps = dispatch => ({
+  products: payload => dispatch(productsFetched(payload)),
+});
+
+export default connect(undefined, mapDispatchToProps)(Component);
+```
+
+The action creator will create an object like so:
+
+```
+{
+  payload: thePayloadYouPassedIn,
+  type: PRODUCTS_FETCHED,
+}
+```
