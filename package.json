@@ -1,0 +1,49 @@
+{
+  "name": "payload-action-creator",
+  "version": "0.0.0-semver",
+  "description": "Very simple Redux payload action creator factory",
+  "main": "lib/index.js",
+  "scripts": {
+    "build:production": "babel src --out-dir lib --ignore **/*.test.js,**/*.test.jsx",
+    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
+    "lint": "eslint --ext .js .",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "test": "npm run lint && npm run test:scripts",
+    "test:scripts": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hvolschenk/payload-action-creator.git"
+  },
+  "keywords": [
+    "Redux",
+    "action",
+    "creator",
+    "factory"
+  ],
+  "author": "Hendrik Volschenk <righteous.trespasser@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hvolschenk/payload-action-creator/issues"
+  },
+  "homepage": "https://github.com/hvolschenk/payload-action-creator#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-jest": "^21.2.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "coveralls": "^3.0.0",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "jest": "^21.2.1",
+    "semantic-release": "^8.2.0"
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/src"
+    ]
+  }
+}
