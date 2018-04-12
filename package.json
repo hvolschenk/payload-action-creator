@@ -7,9 +7,10 @@
     "build:production": "babel src --out-dir lib --ignore **/*.test.js,**/*.test.jsx",
     "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
     "lint": "eslint --ext .js .",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "test": "npm run lint && npm run test:scripts",
-    "test:scripts": "jest --coverage"
+    "semantic-release": "semantic-release",
+    "test": "npm run lint && npm run test:vulnerabilities && npm run test:scripts",
+    "test:scripts": "jest --coverage --config ./jest.config.json",
+    "test:vulnerabilities": "nsp check"
   },
   "repository": {
     "type": "git",
@@ -31,19 +32,15 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
-    "babel-jest": "^21.2.0",
+    "babel-jest": "^22.4.3",
     "babel-preset-env": "^1.6.0",
     "babel-preset-stage-0": "^6.24.1",
     "coveralls": "^3.0.0",
-    "eslint": "^4.9.0",
+    "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.8.0",
-    "jest": "^21.2.1",
-    "semantic-release": "^8.2.0"
-  },
-  "jest": {
-    "roots": [
-      "<rootDir>/src"
-    ]
+    "eslint-plugin-import": "^2.11.0",
+    "jest": "^22.4.3",
+    "nsp": "^3.2.1",
+    "semantic-release": "^15.1.6"
   }
 }
