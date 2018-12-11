@@ -3,14 +3,18 @@
   "version": "0.0.0-development",
   "description": "Very simple Redux payload action creator factory",
   "main": "lib/index.js",
+  "files": [
+    "/lib"
+  ],
   "scripts": {
-    "build:production": "babel src --out-dir lib --ignore **/*.test.js,**/*.test.jsx",
+    "build": "babel src --out-dir lib --ignore src/**/*.test.js",
     "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
-    "lint": "eslint --ext .js .",
     "semantic-release": "semantic-release",
-    "test": "npm run lint && npm run test:vulnerabilities && npm run test:scripts",
-    "test:scripts": "jest --coverage --config ./jest.config.json",
-    "test:vulnerabilities": "nsp check"
+    "test": "npm run test:lint && npm run test:vulnerabilities && npm run test:scripts",
+    "test:lint": "eslint --ext js .",
+    "test:scripts": "jest --config ./jest.config.json --coverage",
+    "test:vulnerabilities": "npm audit",
+    "travis-deploy-once": "travis-deploy-once"
   },
   "repository": {
     "type": "git",
@@ -30,17 +34,17 @@
   "homepage": "https://github.com/hvolschenk/payload-action-creator#readme",
   "dependencies": {},
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-jest": "^22.4.3",
-    "babel-preset-env": "^1.6.0",
-    "babel-preset-stage-0": "^6.24.1",
-    "coveralls": "^3.0.0",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.11.0",
-    "jest": "^22.4.3",
-    "nsp": "^3.2.1",
-    "semantic-release": "^15.1.6"
+    "@babel/cli": "^7.2.0",
+    "@babel/core": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "coveralls": "^3.0.2",
+    "eslint": "^5.10.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "jest": "^23.6.0",
+    "semantic-release": "^15.12.4",
+    "travis-deploy-once": "^5.0.9"
   }
 }
