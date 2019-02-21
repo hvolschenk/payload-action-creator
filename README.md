@@ -2,7 +2,6 @@
 
 [![Build Status](https://travis-ci.org/hvolschenk/payload-action-creator.svg?branch=master)](https://travis-ci.org/hvolschenk/payload-action-creator)
 [![Coverage Status](https://coveralls.io/repos/github/hvolschenk/payload-action-creator/badge.svg?branch=master)](https://coveralls.io/github/hvolschenk/payload-action-creator?branch=master)
-[![NSP Status](https://nodesecurity.io/orgs/hendrik-volschenk/projects/35c950e1-ea87-4da7-97b8-8142aa894187/badge)](https://nodesecurity.io/orgs/hendrik-volschenk/projects/35c950e1-ea87-4da7-97b8-8142aa894187)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
 A very simple Redux payload action creator factory
